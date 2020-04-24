@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block body %}
+<form action="/" method="post">
+    <label for="reader">Reader:</label>
+    <select id="reader" name="reader">
+        {% for reader in readers %}
+        <option value="{{reader.id}}">{{reader.name}}</option>
+        {% endfor %}
+    </select>
+    <br/>
+    <input type="radio" id="read" name="activity" value="read">
+    <label for="read">Read</label>
+    <input type="radio" id="screen" name="activity" value="screen">
+    <label for="screen">Screen Time</label><br/>
+
+    <input type="radio" id="start" name="endpoint" value="start">
+    <label for="start">Start</label>
+    <input type="radio" id="stop" name="endpoint" value="stop">
+    <label for="stop">Stop</label><br/>
+
+    <input type="submit" value="Submit"><br/>
+</form>
+{% endblock %}
